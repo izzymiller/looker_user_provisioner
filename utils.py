@@ -59,10 +59,10 @@ def get_email_setup(client,userid):
 
 def send_mail(url,email):
 	sg = sendgrid.SendGridAPIClient(apikey=os.environ.get('SENDGRID_API_KEY'))
-	from_email = Email("izzy@sendgrid.com")
+	from_email = Email("theemailtobesentfrom")
 	to_email = Email(email)
-	subject = "Your Looker Play Registration"
-	content = Content("text/plain", "Hi! Thanks for signing up for Looker Play. We hope you have a lot of fun :) Click this link to get set up {}".format(url))
+	subject = "Welcome to Looker "
+	content = Content("text/plain", "Whatever you want your email to say. Click this link to get set up {}".format(url))
 	mail = Mail(from_email, subject, to_email, content)
 	response = sg.client.mail.send.post(request_body=mail.get())
 	pprint('successfully sent reset email')
