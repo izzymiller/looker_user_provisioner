@@ -196,6 +196,13 @@ def send_mail(url,email):
 ```
 
 And hey presto, you've automatically configured a user! 
+To run the whole shebang, you can just do
+
+```
+export FLASK_APP=app.py
+flask run
+```
+or if you prefer gunicorn, `gunicorn app:app`
 
 As I said in the intro, I'm sure there's better and more efficient ways to do this, and I'm super eager to hear them :slight_smile:
 
